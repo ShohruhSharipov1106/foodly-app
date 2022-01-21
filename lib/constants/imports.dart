@@ -10,4 +10,6 @@ export 'package:foodly_app/screens/onboarding/onboarding_page.dart';
 export 'package:foodly_app/service/provider/onboarding_provider.dart';
 export 'package:foodly_app/screens/authentification/signUp_page/signUp_mainpage.dart';
 export 'package:foodly_app/screens/authentification/signIn_page/signIn_mainpage.dart';
+export 'package:foodly_app/widget/inputCard.dart';
+export 'package:foodly_app/service/provider/input_provider.dart';
 export 'package:foodly_app/widget/connect_with_field.dart';

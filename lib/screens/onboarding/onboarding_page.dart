@@ -8,6 +8,7 @@ class OnBoardingPage extends StatelessWidget {
     SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Column(
           children: [
             onBoardCard(

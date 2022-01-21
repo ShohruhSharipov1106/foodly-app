@@ -4,9 +4,8 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (context) => OnBoardingProvider(),
-        ),
+        ChangeNotifierProvider(create: (context) => OnBoardingProvider()),
+        ChangeNotifierProvider(create: (_) => InputProvider()),
       ],
       child: const MyApp(),
     ),
@@ -56,10 +55,20 @@ class MyApp extends StatelessWidget {
             color: kBodyTextColor,
             fontSize: 16.0,
           ),
-          subtitle2:  TextStyle(
+          subtitle2: TextStyle(
             color: kMainTextColor,
             fontSize: 12.0,
           ),
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          border: UnderlineInputBorder(borderSide: BorderSide.none,),
+     
+          labelStyle: TextStyle(
+            color: kBodyTextColor,
+            fontSize: 16.0,
+            letterSpacing: 0.8,
+          ),
+          
         ),
       ),
       home: OnBoardingPage(),
