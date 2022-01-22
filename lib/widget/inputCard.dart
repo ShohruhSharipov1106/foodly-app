@@ -1,8 +1,12 @@
 import 'package:foodly_app/constants/imports.dart';
 
-Container inputFieldCard(BuildContext context) {
+Container inputFieldCard(BuildContext context, TextEditingController kontroller,
+    TextInputType keyboardtype, String labeltextfield, String suffixField,
+    {bool isObsecure = false}) {
   return Container(
-    height: getHeight(65.0),
+    height: context.watch<InputProvider>().isOnTap == false
+        ? getHeight(54.0)
+        : getHeight(65.0),
     width: getWidth(335.0),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(6.0),
@@ -20,25 +24,25 @@ Container inputFieldCard(BuildContext context) {
     ),
     padding: EdgeInsets.symmetric(
       vertical: context.watch<InputProvider>().isOnTap == false
-          ? getHeight(18.0)
+          ? getHeight(8.0)
           : getHeight(0.0),
       horizontal: getWidth(20.0),
     ),
     child: TextField(
-      controller: context.watch<InputProvider>().emailFieldController,
-      keyboardType: TextInputType.emailAddress,
+      controller: kontroller,
+      keyboardType: keyboardtype,
       cursorColor: kActiveColor,
       cursorWidth: 1.0,
-      obscureText: false,
+      obscureText: isObsecure,
+      obscuringCharacter: "*",
       decoration: InputDecoration(
-        labelText: "Email Address",
+        labelText: labeltextfield,
         suffix: SvgPicture.asset(
-          "assets/icons/Phone.svg",
+          suffixField,
           height: getHeight(18.0),
           width: getWidth(10.0),
           fit: BoxFit.cover,
         ),
-        floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
       onTap: () => context.read<InputProvider>().isOnTapFunc(),
       onEditingComplete: () =>

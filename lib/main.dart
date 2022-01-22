@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
           button: TextStyle(
             color: kBgColor,
             fontSize: 14.0,
+            fontWeight: FontWeight.bold,
           ),
           headline1: TextStyle(
             color: kMainTextColor,
@@ -51,6 +52,15 @@ class MyApp extends StatelessWidget {
             fontSize: 34.0,
             fontWeight: FontWeight.bold,
           ),
+          headline3: TextStyle(
+            color: kMainTextColor,
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+          ),
+          headline4: TextStyle(
+            color: kMainTextColor,
+            fontSize: 16.0,
+          ),
           subtitle1: TextStyle(
             color: kBodyTextColor,
             fontSize: 16.0,
@@ -61,14 +71,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
         inputDecorationTheme: const InputDecorationTheme(
-          border: UnderlineInputBorder(borderSide: BorderSide.none,),
-     
+          border: UnderlineInputBorder(
+            borderSide: BorderSide.none,
+          ),
           labelStyle: TextStyle(
             color: kBodyTextColor,
             fontSize: 16.0,
             letterSpacing: 0.8,
           ),
-          
         ),
       ),
       home: OnBoardingPage(),

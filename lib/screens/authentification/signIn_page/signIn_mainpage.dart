@@ -20,16 +20,32 @@ class SignInPage extends StatelessWidget {
         child: Column(
           children: [
             _welcomeTextField(context),
-            inputFieldCard(context),
-            inputFieldCard(context),
+            // edit this
+            inputFieldCard(
+              context,
+              context.watch<InputProvider>().emailFieldController,
+              TextInputType.emailAddress,
+              "Email Address",
+              "assets/icons/Phone.svg",
+            ),
+            inputFieldCard(
+                context,
+                context.watch<InputProvider>().passwordFieldController,
+                TextInputType.visiblePassword,
+                "Password",
+                "assets/icons/eye.svg",
+                isObsecure: true),
             _forgotPasswordField(context),
+            // edit this
             primaryButtonCard(
               context,
               kActiveColor,
               "Sign in",
               getHeight(8.0),
-              () => print("Sign in"),
+              () => print("Sign in")
+              
             ),
+            // edit this
             connectWithField(context),
           ],
         ),
@@ -56,6 +72,7 @@ class SignInPage extends StatelessWidget {
               text: "Enter your Phone number or Email\nfor sign in, Or ",
               style: Theme.of(context).textTheme.subtitle1,
             ),
+            // edit this
             TextSpan(
               text: "Create new account.",
               style: const TextStyle(
@@ -92,7 +109,12 @@ class SignInPage extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
-        onPressed: () {},
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ForgotPasswordPage(),
+          ),
+        ),
       ),
     );
   }
